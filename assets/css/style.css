@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    text-align: center;
+    color:forestgreen;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    height: 12vh;
+}
+
+.car{
+    height: 84vh;
+}
+.image{
+    height: 84vh;
+}
+.carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color:chartreuse; /* semi-transparent black background */
+      border-radius: 50%; /* rounded shape */
+      padding: 20px; /* spacing around the icon */
+      width: 40px;
+      height: 40px;
+      background-size: 100%, 100%;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    /* Hover effects for better interaction */
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+      background-color: red;
+      transform: scale(1.1);
+    }
+    
+.title{
+    color:red;
+    font-weight: 700;
+}
+.name{
+    color:darkmagenta;
+    font-weight: 600;
+}
