@@ -17,16 +17,16 @@
   ></script>
   <title>Dynamic Image Carousel</title>
   <style>
-    /* Hide carousel indicators */
+    
     .carousel-indicators { display: none; }
   </style>
 </head>
 <body>
   <h1 class="header">Image Gallery</h1>
   <div id="carouselExampleCaptions" class="carousel slide car">
-    <!-- Removed carousel-indicators div -->
+    
     <div class="carousel-inner" id="carousel-inner"></div>
-    <!-- Custom controls -->
+    
     <button id="prevBtn" class="carousel-control-prev prev" type="button">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -40,14 +40,14 @@
   <script>
     const ACCESS_KEY = '-TiEyMqu216krPE_qn2tZmxeMcHwhGOFBK__yF6I6ww';
     
-    // Array to store history of fetched image sets
+    
     let imageHistory = [];
     let currentImages = null;
 
-    // Function to update carousel with given images array
+    
     function displayImages(images) {
       const inner = document.getElementById('carousel-inner');
-      inner.innerHTML = '';  // Clear current content
+      inner.innerHTML = '';  
       
       images.forEach((photo, index) => {
         const carouselItem = document.createElement('div');
@@ -66,7 +66,7 @@
       });
     }
 
-    // Function to fetch a new image and update the carousel.
+    
     function fetchImageAndUpdateCarousel() {
     fetch(`https://api.unsplash.com/photos/random`, {
         headers: {
@@ -82,7 +82,7 @@
         return response.json();
         })
         .then(data => {
-        // Wrap data in an array in case it's a single object
+        
         const newImages = Array.isArray(data) ? data : [data];
         if (currentImages) {
             imageHistory.push(currentImages);
@@ -92,18 +92,18 @@
         })
         .catch(error => {
         console.error('Error fetching images:', error);
-        // Optionally display a user-friendly message here
+        
         alert('Error fetching images: ' + error.message);
         });
     }
 
-    // Next button click: fetch a new random image.
+    
     document.getElementById('nextBtn').addEventListener('click', (e) => {
       e.preventDefault();
       fetchImageAndUpdateCarousel();
     });
 
-    // Previous button click: display previous image set if available.
+    
     document.getElementById('prevBtn').addEventListener('click', (e) => {
       e.preventDefault();
       if (imageHistory.length > 0) {
@@ -114,7 +114,6 @@
       }
     });
 
-    // Initially load an image when the page loads.
     fetchImageAndUpdateCarousel();
   </script>
 </body>
